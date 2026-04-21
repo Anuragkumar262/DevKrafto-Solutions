@@ -76,7 +76,7 @@ const HeroSection = () => {
             2. -translate-x-32 to -translate-x-64 - Aggressive left pull toward the headlines.
             3. overflow-visible - Final safety net for transparency layers.
             */}
-        <div className="absolute w-[180%] h-full flex items-center justify-center z-55 -translate-x-28 md:-translate-x-48 lg:-translate-x-96 -translate-y-10 md:-translate-y-16 lg:-translate-y-20 scale-100 md:scale-115 lg:scale-135 transition-all duration-1000 ease-in-out overflow-visible">
+        <div className="absolute w-[180%] h-full flex items-center justify-center z-0 -translate-x-28 md:-translate-x-48 lg:-translate-x-96 -translate-y-10 md:-translate-y-16 lg:-translate-y-20 scale-100 md:scale-115 lg:scale-135 transition-all duration-1000 ease-in-out overflow-visible">
           <Suspense fallback={
            <div className="w-full h-full flex items-center justify-center text-[#BA9EFF] font-['Space_Grotesk'] animate-pulse uppercase tracking-widest text-xs">
              Synchronizing Core...

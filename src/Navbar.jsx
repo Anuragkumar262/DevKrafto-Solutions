@@ -4,13 +4,13 @@ const Navbar = () => {
       
       <h3 className="font-['Space_Grotesk'] text-xl font-bold text-white relative z-10">DevKrafto</h3>
       
-      {/* Links */}
+      {/* Links 
       
       <div className='hidden md:flex items-center text-white gap-7 font-bold'>
         <h2 className="font-['Space_Grotesk'] cursor-pointer hover:text-[#BA9EFF] transition">Who We Are</h2>
         <h2 className="font-['Space_Grotesk'] cursor-pointer hover:text-[#BA9EFF] transition">What We Do</h2>
         <h2 className="font-['Space_Grotesk'] cursor-pointer hover:text-[#BA9EFF] transition">Contact Us</h2>
-      </div>
+      </div>*/}
 
       <button className="font-['Space_Grotesk'] px-6 py-2 bg-[#BA9EFF] text-black font-bold rounded-xl transition-transform active:scale-95">
         INITIATE PROTOCOL
