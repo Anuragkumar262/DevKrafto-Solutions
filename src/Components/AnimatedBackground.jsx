@@ -19,15 +19,6 @@ const AnimatedBackground = () => {
     let animationFrameId;
 
     const mouse = { x: null, y: null, radius: 170 };
-    const colors = { particleRgb: '255 255 255', linkRgb: '236 72 153' };
-
-    const readThemeColors = () => {
-      const style = getComputedStyle(document.documentElement);
-      const particleRgb = style.getPropertyValue('--particle-rgb').trim();
-      const linkRgb = style.getPropertyValue('--link-rgb').trim();
-      colors.particleRgb = particleRgb || colors.particleRgb;
-      colors.linkRgb = linkRgb || colors.linkRgb;
-    };
 
     const handleResize = () => {
       // Increase height to 120% so it doesn't "end" when moving up during parallax
@@ -62,7 +53,7 @@ const AnimatedBackground = () => {
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
         const alpha = this.size > 4 ? 0.5 : 0.8; 
-        ctx.fillStyle = `rgba(${colors.particleRgb}, ${alpha})`;
+        ctx.fillStyle = `rgba(255, 255, 255, ${alpha})`;
         ctx.fill();
       }
 
@@ -110,7 +101,7 @@ const AnimatedBackground = () => {
 
           if (distance < 100) {
             const opacity = 1 - distance / 100;
-            ctx.strokeStyle = `rgba(${colors.linkRgb}, ${opacity * 0.4})`;
+            ctx.strokeStyle = `rgba(236, 72, 153, ${opacity * 0.4})`;
             ctx.lineWidth = 2;
             ctx.beginPath();
             ctx.moveTo(particles[a].x, particles[a].y);
@@ -132,10 +123,6 @@ const AnimatedBackground = () => {
     window.addEventListener('mousemove', handleMouseMove);
     window.addEventListener('mouseleave', handleMouseLeave);
 
-    readThemeColors();
-    const observer = new MutationObserver(() => readThemeColors());
-    observer.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
-
     handleResize();
     animate();
 
@@ -143,7 +130,6 @@ const AnimatedBackground = () => {
       window.removeEventListener('resize', handleResize);
       window.removeEventListener('mousemove', handleMouseMove);
       window.removeEventListener('mouseleave', handleMouseLeave);
-      observer.disconnect();
       cancelAnimationFrame(animationFrameId);
     };
   }, []);
