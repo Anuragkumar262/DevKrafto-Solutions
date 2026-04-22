@@ -39,9 +39,9 @@ const Specialized = () => {
 
   return (
     <div>
-      <section className="text-white">
-        <div className="container mx-auto px-6 py-15 lg:px-12 border-y border-white/[0.03] bg-gradient-to-tr from-black/[0.1] via-neutral-900/[0.5] to-black/[0.1] backdrop-blur-[2px]">
-          
+      <section className=" mt-15 text-white w-full border-y border-white/[0.03] bg-gradient-to-tr from-black/[0.1] via-neutral-900/[0.5] to-black/[0.1] backdrop-blur-[2px]">
+        <div className="container mx-auto px-6 py-20 lg:px-12">
+
           {/* Header Section */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-16">
             <div className="lg:col-span-6">
